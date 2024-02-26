@@ -3,9 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js" defer></script>
     <title>Textify</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="w-screen h-screen flex flex-row justify-center">
+    <div class="w-2/3 flex flex-col">
+      <label class="my-2"> Enter your text here </label>
+      <label>
+        <textarea
+          id="textarea-main"
+          class="h-72 w-full text-left border border-gray-300 align-top p-2 font-sans rounded-xl focus:outline-none"
+          placeholder="Enter your text here..."
+          type="text"
+        ></textarea>
+      </label>
+      <div class="flex flex-row my-2">
+        <button
+          id="toUpper"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+          onclick=""
+        >
+          Uppercase
+        </button>
+        <button
+          id="toLower"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+        >
+          Lowercase
+        </button>
+        <button
+          id="clear"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+        >
+          Clear
+        </button>
+        <button
+          id="formatSpace"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+        >
+          Format
+        </button>
+        <button
+          id="capitalize"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+        >
+          Capitalize
+        </button>
+        <button
+          id="test"
+          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
+        >
+          Test
+        </button>
+      </div>
+    </div>
   </body>
 </html>
