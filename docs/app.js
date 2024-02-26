@@ -58,7 +58,7 @@ buttonFormat.addEventListener("click", function () {
     text = text.replace(selectedText, selectedText.replace(/\s/g, " "));
     textArea.value = text;
   } else {
-    textArea.value = textArea.value.replace(/\s/g, " ");
+    textArea.value = textArea.value.replace(/ {2,}/g, " ");
   }
 });
 
