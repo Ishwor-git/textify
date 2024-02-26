@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/basicFormatting.js" defer></script>
@@ -11,52 +15,79 @@
   <body class="w-screen h-screen flex flex-row justify-center">
     <div class="w-2/3 flex flex-col">
       <label class="my-2"> Enter your text here </label>
+      <div class="w-full h-10 bg-slate-300 border-slate-400 rounded-t-xl">
+        <button class="px-2 py-2 h-full mr-1">
+          <span id="copyContent" class="material-symbols-outlined">
+            content_copy
+          </span>
+        </button>
+        <button id="pasteContent" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined"> content_paste </span>
+        </button>
+        <button id="toUpper" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined">
+            keyboard_capslock_badge
+          </span>
+        </button>
+        <button id="toLower" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined"> match_case </span>
+        </button>
+        <button id="capitalize" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined"> text_fields </span>
+        </button>
+        <button id="formatSpace" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined"> imagesearch_roller </span>
+        </button>
+        <button id="clear" class="px-1 py-2 h-full mr-1">
+          <span class="material-symbols-outlined"> delete_forever </span>
+        </button>
+      </div>
       <label>
         <textarea
           id="textarea-main"
-          class="h-72 w-full text-left border border-gray-300 align-top p-2 font-sans rounded-xl focus:outline-none"
+          class="h-72 w-full text-left border border-gray-300 align-top p-2 font-sans rounded-b-xl focus:outline-none"
           placeholder="Enter your text here..."
           type="text"
         ></textarea>
       </label>
       <div class="flex flex-row my-2">
-        <button
+        <!-- <button
           id="toUpper"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
           onclick=""
         >
           Uppercase
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           id="toLower"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
         >
           Lowercase
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           id="clear"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
         >
           Clear
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           id="formatSpace"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
         >
           Format
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           id="capitalize"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
         >
           Capitalize
-        </button>
-        <button
+        </button> -->
+        <!-- <button
           id="test"
           class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
         >
           Test
-        </button>
+        </button> -->
       </div>
     </div>
   </body>
