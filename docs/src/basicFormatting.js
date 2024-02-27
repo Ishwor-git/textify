@@ -59,9 +59,9 @@ buttonFormat.addEventListener("click", function () {
     text = text.replace(selectedText, selectedText.replace(/\n\s*\n/g, "\n"));
     textArea.value = text;
   } else {
-    textArea.value = text;
-    text = text.replace(selectedText, selectedText.replace(/ +/g, " "));
-    text = text.replace(selectedText, selectedText.replace(/\n\s*\n/g, "\n"));
+    text = textArea.value;
+    text = text.replace(text, text.replace(/ +/g, " "));
+    text = text.replace(text, text.replace(/\n\s*\n/g, "\n"));
     textArea.value = text;
   }
 });
@@ -78,4 +78,17 @@ buttonCapitalize.addEventListener("click", function () {
 
   var resulText = capitalizedSentences.join(". ");
   textArea.value = resulText;
+});
+
+let buttonCopy = document.getElementById("copyContent");
+buttonCopy.addEventListener("click", function () {
+  textArea.select();
+  document.execCommand("copy");
+  textArea.removeAttribute("selected");
+});
+
+let buttonPaste = document.getElementById("pasteContent");
+buttonPaste.addEventListener("click", async function () {
+  let text = await navigator.clipboard.readText();
+  textArea.value = text;
 });
