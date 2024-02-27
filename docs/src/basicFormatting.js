@@ -69,15 +69,9 @@ buttonFormat.addEventListener("click", function () {
 let buttonCapitalize = document.getElementById("capitalize");
 buttonCapitalize.addEventListener("click", function () {
   let text = textArea.value;
-  let sentences = text.split(".");
-
-  let capitalizedSentences = sentences.map(function (sentence) {
-    var trimmedSentence = sentence.trim();
-    return trimmedSentence.charAt(0).toUpperCase() + trimmedSentence.slice(1);
+  return text.replace(/([.!?]\s|\n)([a-z])/g, (match, separator, letter) => {
+    return separator + letter.toUpperCase();
   });
-
-  var resulText = capitalizedSentences.join(". ");
-  textArea.value = resulText;
 });
 
 let buttonCopy = document.getElementById("copyContent");
