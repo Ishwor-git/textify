@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="src/basicFormatting.js" defer></script>
+    <script src="src/getInfo.js" defer></script>
     <script src="app.js" defer></script>
     <title>Textify</title>
   </head>
@@ -50,44 +51,13 @@
           type="text"
         ></textarea>
       </label>
-      <div class="flex flex-row my-2">
-        <!-- <button
-          id="toUpper"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-          onclick=""
-        >
-          Uppercase
-        </button> -->
-        <!-- <button
-          id="toLower"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-        >
-          Lowercase
-        </button> -->
-        <!-- <button
-          id="clear"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-        >
-          Clear
-        </button> -->
-        <!-- <button
-          id="formatSpace"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-        >
-          Format
-        </button> -->
-        <!-- <button
-          id="capitalize"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-        >
-          Capitalize
-        </button> -->
-        <!-- <button
-          id="test"
-          class="bg-sky-500 hover:bg-sky-700 px-5 py-3 rounded-xl text-white font-bold mr-2"
-        >
-          Test
-        </button> -->
+      <div class="flex flex-col my-2">
+        <label class="flex flex-row" id="viewInfo">
+          <span id="Characters" class="mr-8">Characters : 0</span>
+          <span id="Words" class="mr-8">Words : 0</span>
+          <span id="Sentences" class="mr-8">Sentences : 0</span>
+          <span id="Paragraphs" class="mr-8">Paragraphs : 0</span>
+        </label>
       </div>
     </div>
   </body>
