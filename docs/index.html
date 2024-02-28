@@ -32,12 +32,12 @@
             <h1 class="text-sky-400 font-bold text-xl my-2">Textify</h1>
           </div>
           <div class="flex flex-row mr-4">
-            <button
+            <!-- <button
               id="nav-help"
               class="text-sky-500 text-base font-semibold mr-4 hover:underline transition duration-700 ease-out hover:ease-in"
             >
               help
-            </button>
+            </button> -->
             <button
               id="nav-source-code"
               class="text-sky-500 text-base font-semibold mr-4 hover:underline transition duration-700 ease-out hover:ease-in"
@@ -105,14 +105,13 @@
             </div>
           </div>
           <label>
-            <div
-              contenteditable="true"
+            <textarea
               id="textarea-main"
               class="opacity-60 h-72 w-full text-left border bg-white border-gray-300 align-top p-2 font-sans rounded-b-xl focus:outline-none"
               placeholder="Enter your text here..."
-            ></div>
+            ></textarea>
           </label>
-          <div class="flex flex-col my-2">
+          <div class="flex flex-col my-2 text-gray-800">
             <label class="flex flex-row" id="viewInfo">
               <span id="Characters" class="mr-8">Characters : 0</span>
               <span id="Words" class="mr-8">Words : 0</span>
@@ -121,6 +120,23 @@
             </label>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div
+      id="overlay"
+      class="hidden flex overlay absolute w-full h-full top-0 left-0 z-10 flex-col justify-center items-center bg-slate-50 bg-opacity-30"
+    >
+      <div class="h-5/6 w-5/6 bg-slate-300 border-slate-400 rounded-xl">
+        <div class="flex flex-row justify-center m-4">
+          <button
+            id="closeResult"
+            class="py-3 px-4 text-center hover:bg-red-700 bg-red-600 border-red-800 rounded-xl text-white font-bold transition duration-700 ease-out hover:ease-in hover:shadow-l"
+          >
+            close
+          </button>
+        </div>
+        <label id="searchResult" class="my-6 mx-4"></label>
       </div>
     </div>
   </body>

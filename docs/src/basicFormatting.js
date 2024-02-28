@@ -4,7 +4,7 @@ function getSelectedText() {
   if (textarea.selectionStart != undefined) {
     var startPos = textarea.selectionStart;
     var endPos = textarea.selectionEnd;
-    var selectedText = textarea.textContent.substring(startPos, endPos);
+    var selectedText = textArea.value.substring(startPos, endPos);
     return selectedText;
   } else {
     return 0;
@@ -19,9 +19,9 @@ buttonUpper.addEventListener("click", function () {
   if (getSelectedText() != 0) {
     let selectedText = getSelectedText();
     text = text.replace(selectedText, selectedText.toUpperCase());
-    textArea.textContent = text;
+    textArea.value = text;
   } else {
-    textArea.textContent = textArea.textContent.toUpperCase();
+    textArea.value = textArea.value.toUpperCase();
   }
 });
 
@@ -30,9 +30,9 @@ buttonLower.addEventListener("click", function () {
   if (getSelectedText() != 0) {
     let selectedText = getSelectedText();
     text = text.replace(selectedText, selectedText.toLowerCase());
-    textArea.textContent = text;
+    textArea.value = text;
   } else {
-    textArea.textContent = textArea.textContent.toLowerCase();
+    textArea.value = textArea.value.toLowerCase();
   }
 });
 
@@ -41,9 +41,9 @@ buttonClear.addEventListener("click", function () {
   if (getSelectedText() != 0) {
     let selectedText = getSelectedText();
     text = text.replace(selectedText, "");
-    textArea.textContent = text;
+    textArea.value = text;
   } else {
-    textArea.textContent = "";
+    textArea.value = "";
   }
 });
 
@@ -51,28 +51,28 @@ let buttonFormat = document.getElementById("formatSpace");
 buttonFormat.addEventListener("click", function () {
   if (getSelectedText() != 0) {
     let selectedText = getSelectedText();
-    let text = textArea.textContent;
+    let text = textArea.value;
     text = text.replace(selectedText, selectedText.replace(/ +/g, " "));
     text = text.replace(selectedText, selectedText.replace(/\n\s*\n/g, "\n"));
-    textArea.textContent = text;
+    textArea.value = text;
   } else {
-    text = textArea.textContent;
+    text = textArea.value;
     text = text.replace(text, text.replace(/ +/g, " "));
     text = text.replace(text, text.replace(/\n\s*\n/g, "\n"));
-    textArea.textContent = text;
+    textArea.value = text;
   }
 });
 
 let buttonCapitalize = document.getElementById("capitalize");
 buttonCapitalize.addEventListener("click", function () {
-  let text = textArea.textContent;
+  let text = textArea.value;
   let finalText = text.replace(
     /([.!?]\s|\n)([a-z])/g,
     (match, separator, letter) => {
       return separator + letter.toUpperCase();
     }
   );
-  textArea.textContent = finalText;
+  textArea.value = finalText;
 });
 
 let buttonCopy = document.getElementById("copyContent");
@@ -85,5 +85,5 @@ buttonCopy.addEventListener("click", function () {
 let buttonPaste = document.getElementById("pasteContent");
 buttonPaste.addEventListener("click", async function () {
   let text = await navigator.clipboard.readText();
-  textArea.textContent = text;
+  textArea.value = text;
 });
