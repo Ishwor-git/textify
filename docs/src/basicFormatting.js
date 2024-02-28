@@ -69,9 +69,13 @@ buttonFormat.addEventListener("click", function () {
 let buttonCapitalize = document.getElementById("capitalize");
 buttonCapitalize.addEventListener("click", function () {
   let text = textArea.value;
-  return text.replace(/([.!?]\s|\n)([a-z])/g, (match, separator, letter) => {
-    return separator + letter.toUpperCase();
-  });
+  let finalText = text.replace(
+    /([.!?]\s|\n)([a-z])/g,
+    (match, separator, letter) => {
+      return separator + letter.toUpperCase();
+    }
+  );
+  textArea.value = finalText;
 });
 
 let buttonCopy = document.getElementById("copyContent");
