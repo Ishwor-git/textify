@@ -13,70 +13,80 @@
     <script src="app.js" defer></script>
     <title>Textify</title>
   </head>
-  <body class="w-screen h-screen flex flex-row justify-center">
-    <div class="w-2/3 flex flex-col my-6">
-      <div
-        class="w-full h-10 bg-slate-300 border-slate-400 rounded-t-xl flex flex-row justify-between"
-      >
-        <div class="flex flex-row">
-          <button class="px-2 py-2 h-full mr-1">
-            <span id="copyContent" class="material-symbols-outlined">
-              content_copy
-            </span>
-          </button>
-          <button id="pasteContent" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined"> content_paste </span>
-          </button>
-          <button id="toUpper" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined">
-              keyboard_capslock_badge
-            </span>
-          </button>
-          <button id="toLower" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined"> match_case </span>
-          </button>
-          <button id="capitalize" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined"> text_fields </span>
-          </button>
-          <button id="formatSpace" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined"> imagesearch_roller </span>
-          </button>
-          <button id="clear" class="px-1 py-2 h-full mr-1">
-            <span class="material-symbols-outlined"> delete_forever </span>
-          </button>
-        </div>
-        <div class="flex flex-col justify-center">
-          <div class="mr-2 w-24 flex flex-row h-3/4">
-            <input
-              id="fontSize"
-              class="w-3/4 p-2 h-full text-center rounded-l-xl focus:outline-none"
+  <body>
+    <div
+      class="bg-cover bg-center w-full h-full"
+      style="background-image: url('./assets/body-bg.jpeg')"
+    >
+      <nav></nav>
+      <div class="w-screen h-screen flex flex-row justify-center">
+        <div class="w-2/3 flex flex-col my-6">
+          <div
+            class="w-full h-10 bg-sky-400 border-slate-400 rounded-t-xl flex flex-row justify-between opacity-90"
+          >
+            <div class="flex flex-row">
+              <button class="px-2 py-2 h-full mr-1">
+                <span id="copyContent" class="material-symbols-outlined">
+                  content_copy
+                </span>
+              </button>
+              <button id="pasteContent" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined"> content_paste </span>
+              </button>
+              <button id="toUpper" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined">
+                  keyboard_capslock_badge
+                </span>
+              </button>
+              <button id="toLower" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined"> match_case </span>
+              </button>
+              <button id="capitalize" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined"> text_fields </span>
+              </button>
+              <button id="formatSpace" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined">
+                  imagesearch_roller
+                </span>
+              </button>
+              <button id="clear" class="px-1 py-2 h-full mr-1">
+                <span class="material-symbols-outlined"> delete_forever </span>
+              </button>
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="mr-2 w-24 flex flex-row h-3/4">
+                <input
+                  id="fontSize"
+                  class="w-3/4 p-2 h-full text-center rounded-l-xl focus:outline-none"
+                  type="text"
+                  placeholder="search"
+                />
+                <button
+                  id="changeFontSize"
+                  class="h-full py-1 px-1 rounded-r-xl bg-white"
+                >
+                  <span class="material-symbols-outlined"> search </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <label>
+            <textarea
+              id="textarea-main"
+              class="opacity-60 h-72 w-full text-left border border-gray-300 align-top p-2 font-sans rounded-b-xl focus:outline-none"
+              placeholder="Enter your text here..."
               type="text"
-              placeholder="search"
-            />
-            <button
-              id="changeFontSize"
-              class="h-full py-1 px-1 rounded-r-xl bg-white"
-            >
-              <span class="material-symbols-outlined"> search </span>
-            </button>
+            ></textarea>
+          </label>
+          <div class="flex flex-col my-2">
+            <label class="flex flex-row" id="viewInfo">
+              <span id="Characters" class="mr-8">Characters : 0</span>
+              <span id="Words" class="mr-8">Words : 0</span>
+              <span id="Sentences" class="mr-8">Sentences : 0</span>
+              <span id="Paragraphs" class="mr-8">Paragraphs : 0</span>
+            </label>
           </div>
         </div>
-      </div>
-      <label>
-        <textarea
-          id="textarea-main"
-          class="h-72 w-full text-left border border-gray-300 align-top p-2 font-sans rounded-b-xl focus:outline-none"
-          placeholder="Enter your text here..."
-          type="text"
-        ></textarea>
-      </label>
-      <div class="flex flex-col my-2">
-        <label class="flex flex-row" id="viewInfo">
-          <span id="Characters" class="mr-8">Characters : 0</span>
-          <span id="Words" class="mr-8">Words : 0</span>
-          <span id="Sentences" class="mr-8">Sentences : 0</span>
-          <span id="Paragraphs" class="mr-8">Paragraphs : 0</span>
-        </label>
       </div>
     </div>
   </body>
