@@ -53,12 +53,12 @@ buttonFormat.addEventListener("click", function () {
     let selectedText = getSelectedText();
     let text = textArea.value;
     text = text.replace(selectedText, selectedText.replace(/ +/g, " "));
-    text = text.replace(selectedText, selectedText.replace(/\n\s*\n/g, "\n"));
+    text = text.replace(selectedText, selectedText.replace(/\n\s*\n/g, "\n\n"));
     textArea.value = text;
   } else {
     text = textArea.value;
     text = text.replace(text, text.replace(/ +/g, " "));
-    text = text.replace(text, text.replace(/\n\s*\n/g, "\n"));
+    text = text.replace(text, text.replace(/\n\s*\n/g, "\n\n"));
     textArea.value = text;
   }
 });
