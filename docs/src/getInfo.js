@@ -2,30 +2,33 @@ countWords = (text) => {
   if (text === "") {
     return 0;
   }
-  text = text.replace(/ +/g, " ");
-  return text.split(" ").length;
+  const words = text.match(/\w+/g);
+  return words.length;
 };
 
 countSentences = (text) => {
-  if (text === "") {
+  if (text.trim() === "") {
     return 0;
   }
-  const sentenceEndings = [".", "!", "?"];
-  text = text.replace(/\n\s*\n/g, "\n");
-  text = text.replace(/ +/g, " ");
-  text = text.replace(/\.+/g, ".");
-  const sentences = text.split(
-    new RegExp(`[${sentenceEndings.join("")}]\\s*|\\n+`)
-  );
-  const filteredSentences = sentences.filter(
-    (sentence) => sentence.trim() !== ""
-  );
-  return filteredSentences.length;
+
+  const sentences = text.match(/\w[.!?](\s|$)/gm);
+
+  return sentences ? sentences.length : 0;
 };
 
 countParagraphs = (text) => {
-  text = text.replace(/\n\s*\n/g, "\n");
-  return text.split("\n").length;
+  if (text.trim() === "") {
+    return 0;
+  }
+  if (text[-1] !== " " && text[-1] !== "\n") {
+    text += "\n\n";
+  }
+  const paragraphs = text.match(/\n\s*\n/g);
+  if (paragraphs != null) {
+    return paragraphs.length;
+  } else {
+    return 0;
+  }
 };
 
 countCharacters = (text) => {
@@ -34,12 +37,12 @@ countCharacters = (text) => {
 
 var textArea = document.getElementById("textarea-main");
 textArea.addEventListener("input", function () {
-  let text = textArea.value;
-  let words = countWords(text);
-  let sentences = countSentences(text);
-  let paragraphs = countParagraphs(text);
-  let characters = countCharacters(text);
-  let Info = [characters, words, sentences, paragraphs];
+  const text = textArea.value;
+  const words = countWords(text);
+  const sentences = countSentences(text);
+  const paragraphs = countParagraphs(text);
+  const characters = countCharacters(text);
+  const Info = [characters, words, sentences, paragraphs];
   displayGrid = document.getElementById("viewInfo").children;
   for (let i = 0; i < displayGrid.length; i++) {
     displayGrid[i].innerText = `${displayGrid[i].id}: ${Info[i]}`;
